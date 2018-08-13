@@ -1,5 +1,5 @@
 # simple-pagerduty-client
- simple-pagerduty-client is an easy-to-use PagerDuty  client, which provides you with the abilieites to retrive incidents,schedules,on calls, and services as well as creating your own incidents.
+ simple-pagerduty-client is an easy-to-use PagerDuty  client, which provides you with the abilieites to retrieve incidents,schedules,on calls, and services as well as creating your own incidents.
 ## How To:
 Just NPM install and import the PagerDuty Class
 
