@@ -1,12 +1,31 @@
 var PagerDuty=require('./PagerDuty')
-
-var pgClient=new PagerDuty({
     //y_NbAkKc66ryYTWUXYEu
     //twbBd56N1ZpDH4i7wbiW
-    //KUAf2tTGCW5cFAxkbduq
-    serverURL: "https://api.pagerduty.com",
-    authToken: "KUAf2tTGCW5cFAxkbduq"
-})
+var pgClient=new PagerDuty({
+    authToken: "twbBd56N1ZpDH4i7wbiW"
+});
+var newIncident={
+    "incident": {
+        "type": "incident",
+        "title": "Test.",
+        "service": {
+          "id": "PJ51XFI",
+          "type": "service_reference"
+        },
+        "priority": {
+          "id": "P53ZZH5",
+          "type": "priority_reference"
+        },
+        "body": {
+          "type": "incident_body",
+          "details": "testtttt."
+        },
+        "escalation_policy": {
+          "id": "PODMDE6",
+          "type": "escalation_policy_reference"
+        }
+  }
+}
 
 pgClient.getIncidents()
 .then(function(incidents) {
@@ -23,6 +42,15 @@ pgClient.getServices()
 .catch(function(ex){
     console.log('Error!: '+ ex)
 })
+
+pgClient.createIncident("This is the repoting system",newIncident)
+.then(function(res) {
+    console.log(res)
+})
+.catch(function(ex){
+    console.log('Error!: '+ ex)
+})
+
 
 
 
