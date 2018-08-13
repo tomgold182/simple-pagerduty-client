@@ -1,10 +1,24 @@
 var PagerDuty=require('./PagerDuty')
-    //y_NbAkKc66ryYTWUXYEu
-    //twbBd56N1ZpDH4i7wbiW
+
 var pgClient=new PagerDuty({
     authToken: "twbBd56N1ZpDH4i7wbiW"
 });
-var newIncident={
+
+ pgClient.getIncidents()
+ .then(function(incidents) {
+     console.log(incidents)
+ })
+ .catch(function(ex){
+     console.log('Error!: '+ ex)
+ })
+ pgClient.getServices()
+ .then(function(services) {
+     console.log(services)
+ })
+ .catch(function(ex){
+     console.log('Error!: '+ ex)
+ })
+ var newIncident={
     "incident": {
         "type": "incident",
         "title": "Test.",
@@ -27,32 +41,27 @@ var newIncident={
   }
 }
 
-pgClient.getIncidents()
-.then(function(incidents) {
-    console.log(incidents)
-})
-.catch(function(ex){
-    console.log('Error!: '+ ex)
-})
+ pgClient.createIncident("This is the repoting system",newIncident)
+ .then(function(res) {
+     console.log(res)
+ })
+ .catch(function(ex){
+     console.log('Error!: '+ ex)
+ })
+  pgClient.getOnCallPersonelList()
+  .then(function(oncalls) {
+      console.log(oncalls)
+  })
+  .catch(function(ex){
+      console.log('Error!: '+ ex)
+  })
 
-pgClient.getServices()
-.then(function(services) {
-    console.log(services)
-})
-.catch(function(ex){
-    console.log('Error!: '+ ex)
-})
-
-pgClient.createIncident("This is the repoting system",newIncident)
-.then(function(res) {
-    console.log(res)
-})
-.catch(function(ex){
-    console.log('Error!: '+ ex)
-})
-
-
-
-
+ pgClient.getSchedules()
+ .then(function(schedules) {
+     console.dir(schedules)
+ })
+ .catch(function(ex){
+     console.log('Error!: '+ ex)
+ })
 
 
