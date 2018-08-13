@@ -2,7 +2,7 @@
   "name": "simple-pagerduty-client",
   "version": "1.0.2",
   "description": "A simple lightweight PagerDuty client",
-  "main": "index.js",
+  "main": "PagerDuty.js",
   "scripts": {
     "test": "npm test"
   },
