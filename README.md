@@ -8,7 +8,7 @@ Just NPM install and import the PagerDuty Class
 Connection:
 
 ```
-var PagerDuty=require('./PagerDuty')
+var PagerDuty=require('simple-pagerduty-client')
 var pgClient=new PagerDuty({
     authToken: "xwbBq56N1ZpSs4i7wbiB"
 });
