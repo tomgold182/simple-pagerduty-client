@@ -22,12 +22,16 @@ class PagerDuty {
                       reject(err)
                   }
                   parsedBody=JSON.parse(body)
+                  if (parsedBody.error)
+                  {
+                      reject(parsedBody.error.message)
+                  }
                   resolve(parsedBody.incidents)
               })
           })
     }
     createIncident(params){
-        
+
     }
     
 }
