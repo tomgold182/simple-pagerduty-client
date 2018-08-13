@@ -10,7 +10,8 @@ Connection:
 ```
 var pgClient=new PagerDuty({
     authToken: "xwbBq56N1ZpSs4i7wbiB"
-});```
+});
+```
 
 usage:
 ```
