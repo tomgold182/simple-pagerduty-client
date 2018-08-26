@@ -22,6 +22,9 @@ class PagerDuty {
                   if (err){
                       reject(err)
                   }
+				  if(body.includes('Authorization Required') || response.statusCode==401){
+                      return reject('Unautorized')
+                  }
                   parsedBody=JSON.parse(body)
                   if (parsedBody.error)
                   {
@@ -47,6 +50,9 @@ class PagerDuty {
               request.get(options,function(err,response,body){
                   if (err){
                       reject(err)
+                  }
+				  if(body.includes('Authorization Required') || response.statusCode==401){
+                      return reject('Unautorized')
                   }
                   parsedBody=JSON.parse(body)
                   if (parsedBody.error)
@@ -77,6 +83,9 @@ class PagerDuty {
                 if (err){
                     reject(err)
                 }
+				if(body.includes('Authorization Required') || response.statusCode==401){
+                      return reject('Unautorized')
+                  }
                 parsedBody=JSON.parse(body)
                 if (parsedBody.error)
                 {
@@ -104,6 +113,9 @@ class PagerDuty {
                   if (err){
                       reject(err)
                   }
+				  if(body.includes('Authorization Required') || response.statusCode==401){
+                      return reject('Unautorized')
+                  }
                   parsedBody=JSON.parse(body)
                   if (parsedBody.error)
                   {
@@ -129,6 +141,9 @@ class PagerDuty {
               request.get(options,function(err,response,body){
                   if (err){
                       reject(err)
+                  }
+				  if(body.includes('Authorization Required') || response.statusCode==401){
+                      return reject('Unautorized')
                   }
                   parsedBody=JSON.parse(body)
                   if (parsedBody.error)
